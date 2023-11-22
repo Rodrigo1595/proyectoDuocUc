@@ -330,43 +330,10 @@
                                         level="H2"
                                     />
                                     <ToolbarSpacer />
-                                    <ComboBox
-                                        id="idPopinLayout"
-                                        placeholder="Popin layout options"
-                                        change="onPopinLayoutChanged"
-                                    >
-                                        <items>
-                                            <core:Item
-                                                text="Block"
-                                                key="Block"
-                                            />
-                                            <core:Item
-                                                text="Grid Large"
-                                                key="GridLarge"
-                                            />
-                                            <core:Item
-                                                text="Grid Small"
-                                                key="GridSmall"
-                                            />
-                                        </items>
-                                    </ComboBox>
-                                    <Label text="Sticky options:" />
-                                    <CheckBox
-                                        text="ColumnHeaders"
-                                        select="onSelect"
-                                    />
-                                    <CheckBox
-                                        text="HeaderToolbar"
-                                        select="onSelect"
-                                    />
-                                    <CheckBox
-                                        text="InfoToolbar"
-                                        select="onSelect"
-                                    />
-                                    <ToggleButton
-                                        id="toggleInfoToolbar"
-                                        text="Hide/Show InfoToolbar"
-                                        press="onToggleInfoToolbar"
+                                    <Button
+                                        text="Tomar Ramos"
+                                        type="Emphasized"
+                                        press="tomaManualpt2"
                                     />
                                 </content>
                             </OverflowToolbar>
@@ -474,9 +441,14 @@
                             alignContent="Center"
                             alignItems="Center"
                         >
-                            <Panel class="sapUiLargeMarginTop" width="23em">
-                                <VBox alignContent="Center"
-                            alignItems="Center">
+                            <Panel
+                                class="sapUiLargeMarginTop"
+                                width="23em"
+                            >
+                                <VBox
+                                    alignContent="Center"
+                                    alignItems="Center"
+                                >
                                     <Title
                                         titleStyle="H2"
                                         text="Escanear código QR"

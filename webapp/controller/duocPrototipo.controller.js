@@ -101,6 +101,10 @@ sap.ui.define([
                 let navCon = this.byId("main.navContainer");
                 navCon.to(this.byId("page4").getId(), "slide");
             },
+            tomaManualpt2: function(){
+                let navCon = this.byId("main.navContainer");
+                navCon.to(this.byId("page3").getId(), "slide");
+            },
             moduloQR: function () {
                 let navCon = this.byId("main.navContainer");
                 navCon.to(this.byId("page5").getId(), "slide");
