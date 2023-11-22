@@ -1,0 +1,591 @@
+<mvc:View
+    xmlns:tnt="sap.tnt"
+    xmlns:f2="sap.f"
+    controllerName="duocuc.controller.duocPrototipo"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <App id="id.app">
+        <NavContainer
+            id="main.navContainer"
+            initialPage="page1"
+        >
+            <pages>
+                <Page
+                    id="page1"
+                    title="{i18n>title}"
+                    floatingFooter="true"
+                    showHeader="false"
+                >
+                    <headerContent />
+                    <content>
+                        <FlexBox
+                            class="sapUiTinyMargin"
+                            alignContent="Center"
+                            justifyContent="Center"
+                            alignItems="Center"
+                        >
+                            <Image
+                                height="13em"
+                                src="./utils/assets/imgs/tomaRamos.png"
+                            />
+                        </FlexBox>
+                        <FlexBox
+                            class="sapUiSmallMargin"
+                            alignContent="Center"
+                            justifyContent="Center"
+                        >
+                            <f:SimpleForm
+                                id="SimpleFormDisplay354"
+                                editable="true"
+                                layout="ResponsiveGridLayout"
+                                title="Iniciar Sesión 👤"
+                                labelSpanXL="3"
+                                labelSpanL="3"
+                                labelSpanM="3"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="4"
+                                emptySpanL="4"
+                                emptySpanM="4"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"
+                            >
+                                <f:content>
+                                    <Label
+                                        id="id.labelUsuario"
+                                        text="Usuario 🚹"
+                                    />
+                                    <Input
+                                        id="nameText"
+                                        placeholder="correo@duocuc.cl"
+                                    />
+                                    <Label
+                                        id="id.labelContrasena"
+                                        text="Contraseña *️⃣"
+                                    />
+                                    <Input
+                                        id="id.inputContrasena"
+                                        placeholder="***********"
+                                        type="Password"
+                                    />
+
+                                    <FlexBox
+                                        alignContent="Center"
+                                        justifyContent="Center"
+                                        class="sapUiTinyMarginTop"
+                                    >
+                                        <Button
+                                            type="Emphasized"
+                                            text="Iniciar Sesión"
+                                            press="navigationPages"
+                                            id="id.buttonInicioSesion"
+                                        />
+                                    </FlexBox>
+                                    <FlexBox
+                                        alignContent="Center"
+                                        justifyContent="Center"
+                                    >
+                                        <Link
+                                            text="¡Olvidé mi contraseña 😥!"
+                                            class="Linkgrande"
+                                            press="navigationPages"
+                                        />
+                                    </FlexBox>
+                                </f:content>
+                            </f:SimpleForm>
+                        </FlexBox>
+                    </content>
+                    <footer>
+                        <OverflowToolbar id="footer.overflowToolbar">
+                            <Image
+                                id="footer.logoDuoc"
+                                width="10em"
+                                src="./utils/assets/imgs/Logo_DuocUC.svg"
+                                backgroundPosition="center"
+                                backgroundRepeat="no-repeat"
+                                backgroundSize="cover"
+                            />
+                            <ToolbarSpacer id="footer.toolbarSpacer" />
+                            <Label
+                                text="Scoroth™ 2023"
+                                class="sapUiTinyMargin"
+                                id="footer.labelTeamScoroth"
+                            />
+                        </OverflowToolbar>
+                    </footer>
+                </Page>
+
+                <Page
+                    id="page2"
+                    floatingFooter="true"
+                    showHeader="true"
+                    showNavButton="true"
+                    title="Proceso toma de ramos paso 1"
+                    navButtonPress="buttonBackNav"
+                    navButtonTooltip="{i18n>volverAtras}"
+                >
+                    <content>
+                        <FlexBox
+                            alignContent="Center"
+                            justifyContent="Center"
+                            class="sapUiLargeMarginTop"
+                        >
+                            <l:VerticalLayout>
+                                <SlideTile
+                                    class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+                                    transitionTime="500"
+                                    displayTime="5000"
+                                >
+                                    <GenericTile
+                                        backgroundImage="./utils/assets/imgs/manualv5.png"
+                                        frameType="TwoByOne"
+                                        press="tomaManual"
+                                    >
+                                        <TileContent footer="Opción 1">
+                                            <NewsContent
+                                                contentText="Toma manual de ramos"
+                                                subheader="Asignación vía grilla"
+                                            />
+                                        </TileContent>
+                                    </GenericTile>
+                                    <GenericTile
+                                        backgroundImage="./utils/assets/imgs/manualv5.png"
+                                        frameType="TwoByOne"
+                                        press="tomaManual"
+                                    >
+                                        <TileContent footer="Opción 1">
+                                            <NewsContent
+                                                contentText="Se otorgará
+                                                 la opción manual de inscribir los ramos según el usuario lo requiera 
+                                                 con una grilla"
+                                                subheader="que contendra la información académica del alumno"
+                                            />
+                                        </TileContent>
+                                    </GenericTile>
+                                </SlideTile>
+                                <SlideTile
+                                    class="sapUiTinyMarginBegin sapUiSmallMarginTop"
+                                    transitionTime="500"
+                                    displayTime="5000"
+                                >
+                                    <GenericTile
+                                        backgroundImage="./utils/assets/imgs/ai.png"
+                                        frameType="TwoByOne"
+                                        press="onDefaultMessageDialogIA"
+                                    >
+                                        <TileContent footer="Opción 2">
+                                            <NewsContent
+                                                contentText="Toma tus ramos con IA"
+                                                subheader="Powered by © OpenAI "
+                                            />
+                                        </TileContent>
+                                    </GenericTile>
+                                    <GenericTile
+                                        backgroundImage="./utils/assets/imgs/ai.png"
+                                        frameType="TwoByOne"
+                                        press="onDefaultMessageDialogIA"
+                                    >
+                                        <TileContent footer="Opción 2">
+                                            <NewsContent
+                                                contentText="La IA será capaz de presentar un horario"
+                                                subheader="según los gustos del usuario"
+                                            />
+                                        </TileContent>
+                                    </GenericTile>
+                                </SlideTile>
+                                <SlideTile
+                                    class="sapUiTinyMarginBegin sapUiSmallMarginTop"
+                                    transitionTime="500"
+                                    displayTime="5000"
+                                >
+                                    <GenericTile
+                                        backgroundImage="./utils/assets/imgs/qr.png"
+                                        frameType="TwoByOne"
+                                        press="moduloQR"
+                                    >
+                                        <TileContent footer="Opción 3">
+                                            <NewsContent
+                                                contentText="Utilizar"
+                                                subheader="un código QR"
+                                            />
+                                        </TileContent>
+                                    </GenericTile>
+                                    <GenericTile
+                                        backgroundImage="./utils/assets/imgs/qr.png"
+                                        frameType="TwoByOne"
+                                        press="moduloQR"
+                                    >
+                                        <TileContent footer="Opción 3">
+                                            <NewsContent
+                                                contentText="¡Comparte tus horarios!"
+                                                subheader="O utiliza alguno de tus compañeros"
+                                            />
+                                        </TileContent>
+                                    </GenericTile>
+                                </SlideTile>
+                            </l:VerticalLayout>
+                        </FlexBox>
+                    </content>
+                    <footer>
+                        <OverflowToolbar id="footer.overflowToolbar3">
+                            <Image
+                                id="footer.logoDuoc3"
+                                width="10em"
+                                src="./utils/assets/imgs/Logo_DuocUC.svg"
+                                backgroundPosition="center"
+                                backgroundRepeat="no-repeat"
+                                backgroundSize="cover"
+                            />
+                            <ToolbarSpacer id="footer.toolbarSpacer3" />
+                            <Label
+                                text="Scoroth™ 2023"
+                                class="sapUiTinyMargin"
+                                id="footer.labelTeamScoroth3"
+                            />
+                        </OverflowToolbar>
+                    </footer>
+                </Page>
+                <Page
+                    id="page3"
+                    floatingFooter="true"
+                    title="Toma de ramos paso 3"
+                    showHeader="true"
+                    showNavButton="true"
+                    navButtonPress="buttonBackNavInicio"
+                    navButtonTooltip="{i18n>volverAtras}"
+                >
+                    <FlexBox
+                        justifyContent="Center"
+                        alignContent="Center"
+                    >
+                        <Image
+                            src="./utils/assets/imgs/horariov2.png"
+                            height="15em"
+                            class="sapUiLargeMarginTop"
+                        />
+                    </FlexBox>
+                    <FlexBox
+                        justifyContent="Center"
+                        alignContent="Center"
+                    >
+                        <Panel class="sapUiTinyMarginTop">
+                            <Image
+                                width="10em"
+                                src="./utils/assets/imgs/pdficon.svg"
+                                press="downloadPDF"
+                            />
+                        </Panel>
+                    </FlexBox>
+
+                    <footer>
+                        <OverflowToolbar id="footer.overflowToolbar4">
+                            <Image
+                                id="footer.logoDuoc4"
+                                width="10em"
+                                src="./utils/assets/imgs/Logo_DuocUC.svg"
+                                backgroundPosition="center"
+                                backgroundRepeat="no-repeat"
+                                backgroundSize="cover"
+                            />
+                            <ToolbarSpacer id="footer.toolbarSpacer4" />
+                            <Label
+                                text="Scoroth™ 2023"
+                                class="sapUiTinyMargin"
+                                id="footer.labelTeamScoroth4"
+                            />
+                        </OverflowToolbar>
+                    </footer>
+                </Page>
+                <Page
+                    id="page4"
+                    floatingFooter="true"
+                    showHeader="true"
+                    showNavButton="true"
+                    navButtonPress="buttonBackNav"
+                    navButtonTooltip="{i18n>volverAtras}"
+                >
+                    <Table
+                        id="idProductsTable"
+                        inset="false"
+                        items="{
+                        path: '/ProductCollection',
+                        sorter: {
+                            path: 'Name'
+                        }
+                    }"
+                    >
+                        <headerToolbar>
+                            <OverflowToolbar>
+                                <content>
+                                    <Title
+                                        text="Products"
+                                        level="H2"
+                                    />
+                                    <ToolbarSpacer />
+                                    <ComboBox
+                                        id="idPopinLayout"
+                                        placeholder="Popin layout options"
+                                        change="onPopinLayoutChanged"
+                                    >
+                                        <items>
+                                            <core:Item
+                                                text="Block"
+                                                key="Block"
+                                            />
+                                            <core:Item
+                                                text="Grid Large"
+                                                key="GridLarge"
+                                            />
+                                            <core:Item
+                                                text="Grid Small"
+                                                key="GridSmall"
+                                            />
+                                        </items>
+                                    </ComboBox>
+                                    <Label text="Sticky options:" />
+                                    <CheckBox
+                                        text="ColumnHeaders"
+                                        select="onSelect"
+                                    />
+                                    <CheckBox
+                                        text="HeaderToolbar"
+                                        select="onSelect"
+                                    />
+                                    <CheckBox
+                                        text="InfoToolbar"
+                                        select="onSelect"
+                                    />
+                                    <ToggleButton
+                                        id="toggleInfoToolbar"
+                                        text="Hide/Show InfoToolbar"
+                                        press="onToggleInfoToolbar"
+                                    />
+                                </content>
+                            </OverflowToolbar>
+                        </headerToolbar>
+                        <infoToolbar>
+                            <OverflowToolbar>
+                                <Label
+                                    text="Wide range of available products"
+                                />
+                            </OverflowToolbar>
+                        </infoToolbar>
+                        <columns>
+                            <Column width="12em">
+                                <Text text="Ramo" />
+                            </Column>
+                            <Column
+                                minScreenWidth="Tablet"
+                                demandPopin="true"
+                            >
+                                <Text text="Supplier" />
+                            </Column>
+                            <Column
+                                minScreenWidth="Desktop"
+                                demandPopin="true"
+                                hAlign="End"
+                            >
+                                <Text text="Dimensions" />
+                            </Column>
+                            <Column
+                                minScreenWidth="Desktop"
+                                demandPopin="true"
+                                hAlign="Center"
+                            >
+                                <Text text="Weight" />
+                            </Column>
+                            <Column hAlign="End">
+                                <Text text="Price" />
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem vAlign="Middle">
+                                <cells>
+                                    <ObjectIdentifier
+                                        title="{Name}"
+                                        text="{ProductId}"
+                                    />
+                                    <Text text="{SupplierName}" />
+                                    <Text
+                                        text="{Width} x {Depth} x {Height} {DimUnit}"
+                                    />
+                                    <ObjectNumber
+                                        number="{WeightMeasure}"
+                                        unit="{WeightUnit}"
+                                        state="{
+							parts: [
+								{path: 'WeightMeasure'},
+								{path: 'WeightUnit'}
+							],
+							formatter: 'sap.m.sample.Table.Formatter.weightState'
+						}"
+                                    />
+                                    <ObjectNumber
+                                        number="{
+								parts:[{path:'Price'},{path:'CurrencyCode'}],
+								type: 'sap.ui.model.type.Currency',
+								formatOptions: {showMeasure: false}
+							}"
+                                        unit="{CurrencyCode}"
+                                    />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+
+                    <footer>
+                        <OverflowToolbar id="footer.overflowToolbar5">
+                            <Image
+                                id="footer.logoDuoc5"
+                                width="10em"
+                                src="./utils/assets/imgs/Logo_DuocUC.svg"
+                                backgroundPosition="center"
+                                backgroundRepeat="no-repeat"
+                                backgroundSize="cover"
+                            />
+                            <ToolbarSpacer id="footer.toolbarSpacer5" />
+                            <Label
+                                text="Scoroth™ 2023"
+                                class="sapUiTinyMargin"
+                                id="footer.labelTeamScoroth5"
+                            />
+                        </OverflowToolbar>
+                    </footer>
+                </Page>
+
+                <Page
+                    id="page5"
+                    floatingFooter="true"
+                    showHeader="true"
+                    showNavButton="true"
+                    navButtonPress="buttonBackNav"
+                    navButtonTooltip="{i18n>volverAtras}"
+                >
+                    <content>
+                        <VBox
+                            alignContent="Center"
+                            alignItems="Center"
+                        >
+                            <Panel class="sapUiLargeMarginTop" width="23em">
+                                <VBox alignContent="Center"
+                            alignItems="Center">
+                                    <Title
+                                        titleStyle="H2"
+                                        text="Escanear código QR"
+                                    />
+                                    <Title
+                                        titleStyle="H6"
+                                        text="Para comenzar aprieta el botón"
+                                    />
+                                    <FlexBox
+                                        alignContent="Center"
+                                        alignItems="Center"
+                                    >
+                                        <Button
+                                            icon="sap-icon://qr-code"
+                                            text="Escanear QR"
+                                            press="onScan"
+                                            width="10em"
+                                        />
+                                    </FlexBox>
+                                </VBox>
+                            </Panel>
+                        </VBox>
+                    </content>
+                    <footer>
+                        <OverflowToolbar id="footer.overflowToolbar6">
+                            <Image
+                                id="footer.logoDuoc6"
+                                width="10em"
+                                src="./utils/assets/imgs/Logo_DuocUC.svg"
+                                backgroundPosition="center"
+                                backgroundRepeat="no-repeat"
+                                backgroundSize="cover"
+                            />
+                            <ToolbarSpacer id="footer.toolbarSpacer6" />
+                            <Label
+                                text="Scoroth™ 2023"
+                                class="sapUiTinyMargin"
+                                id="footer.labelTeamScoroth6"
+                            />
+                        </OverflowToolbar>
+                    </footer>
+                </Page>
+
+                <Page
+                    id="page0"
+                    floatingFooter="true"
+                    showHeader="true"
+                    title="Recuperación de contraseña"
+                    showNavButton="true"
+                    navButtonPress="buttonBackNav"
+                    navButtonTooltip="{i18n>volverAtras}"
+                >
+                    <headerContent />
+                    <content>
+                        <FlexBox
+                            justifyContent="Center"
+                            alignContent="Center"
+                            class="sapUiLargeMarginTop"
+                        >
+                            <Image
+                                height="10em"
+                                src="./utils/assets/imgs/lost.png"
+                            />
+                        </FlexBox>
+                        <FlexBox
+                            justifyContent="Center"
+                            alignContent="Center"
+                        >
+                            <Panel class="sapUiTinyMarginTop">
+                                <VBox class="sapUiTinyMarginTop">
+                                    <tnt:InfoLabel
+                                        text="Instrucciones para recuperar tu cuenta DUOCUC:"
+                                    />
+                                    <Text
+                                        text="{i18n>lorem}"
+                                        width="20em"
+                                        class="sapUiTinyMarginTop"
+                                    />
+                                    <Link
+                                        text="Link a experiencia vivo DuocUC"
+                                        href="https://experienciavivo.duoc.cl"
+                                        target="_blank"
+                                        class="sapUiTinyMarginTop"
+                                    />
+                                </VBox>
+                            </Panel>
+                        </FlexBox>
+                    </content>
+
+                    <footer>
+                        <OverflowToolbar id="footer.overflowToolbar2">
+                            <Image
+                                id="footer.logoDuoc2"
+                                width="10em"
+                                src="./utils/assets/imgs/Logo_DuocUC.svg"
+                                backgroundPosition="center"
+                                backgroundRepeat="no-repeat"
+                                backgroundSize="cover"
+                            />
+                            <ToolbarSpacer id="footer.toolbarSpacer2" />
+                            <Label
+                                text="Scoroth™ 2023"
+                                class="sapUiTinyMargin"
+                                id="footer.labelTeamScoroth2"
+                            />
+                        </OverflowToolbar>
+                    </footer>
+                </Page>
+            </pages>
+        </NavContainer>
+    </App>
+</mvc:View>
